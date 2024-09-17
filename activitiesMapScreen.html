@@ -10,14 +10,14 @@
 </head>
 <body>
     <header>
-        <div class="h-div"></div>
+        <div class="h-div">
             <!--<img src="" alt="">--> <h1 class="h-title">SNCT App</h1>
 
             <nav class="h-nav">
-                <a href="/" class="h-nav-i">Home</a>
-                <a href="/" class="h-nav-i">Programação</a>
-                <a href="/" class="h-nav-i">Localização</a>
-                <a href="/" class="h-nav-i">Sobre o evento</a>
+                <a href="index.html" class="h-nav-i">Home</a>
+                <a href="eventSchedule.html" class="h-nav-i">Programação</a>
+                <a href="locationScreen.html" class="h-nav-i">Localização</a>
+                <a href="eventAbout.html" class="h-nav-i">Sobre o evento</a>
             </nav>
 
             <button class="h-button"><a href="">Acessar</a></button>
@@ -25,32 +25,44 @@
     </header>
 
     <main>
-        <h2>Encontre atividades próximas de você!</h2>
+        <h2 class="m-title">Encontre atividades próximas de você!</h2>
 
-        <p>Bem-vindo(a) ao nosso mapa interativo, onde você pode localizar as atividades mais próximas de sua posição atual durante o evento. O mapa indicará a posição atual em que você está (MARCADOR VERMELHO), enquanto as atividades, cursos, palestras, oficinas e etc. estarão destacadas em CORES VARIADAS. Você também pode dar zoom para visualizar mais de perto os locais disponíveis para visitar. Aproveite o evento!</p>
+        <p class="m-main-p">Bem-vindo(a) ao nosso mapa interativo, onde você pode localizar as atividades mais próximas de sua posição atual durante o evento. O mapa indicará a posição atual em que você está (MARCADOR VERMELHO), enquanto as atividades, cursos, palestras, oficinas e etc. estarão destacadas em CORES VARIADAS. Você também pode dar zoom para visualizar mais de perto os locais disponíveis para visitar. Aproveite o evento!</p>
 
-        <div class="filters-buttons">
-            <button onclick="filterActivitiesByType('PALESTRA')">Palestra</button>
-            <button onclick="filterActivitiesByType('OFICINA')">Oficina</button>
-            <button onclick="filterActivitiesByType('MINICURSO')">Minicurso</button>
-            <button onclick="filterActivitiesByType('TRABALHO')">Trabalho</button>
-            <button onclick="filterActivitiesByType('ALL')" id="teste">Mostrar Todas</button>
-        </div>
+        <div class="m-container">
+            <p class="m-container-p">Filtrar por</p>
 
-        <div class="filters-buttons">
-            <button onclick="filterActivitiesByDate('21/10/2024')">21/10/2024</button>
-            <button onclick="filterActivitiesByDate('22/10/2024')">22/10/2024</button>
-            <button onclick="filterActivitiesByDate('23/10/2024')">23/10/2024</button>
-            <button onclick="filterActivitiesByDate('24/10/2024')">24/10/2024</button>
-            <button onclick="filterActivitiesByDate('25/10/2024')">25/10/2024</button>
-            <button onclick="filterActivitiesByDate('ALL')">Mostrar Todas</button>
+            <div class="m-container-section">
+                <p class="m-container-section-p">Tipo da Atividade</p>
+
+                <div class="filters-buttons">
+                    <button onclick="filterActivitiesByType('PALESTRA')">Palestra</button>
+                    <button onclick="filterActivitiesByType('OFICINA')">Oficina</button>
+                    <button onclick="filterActivitiesByType('MINICURSO')">Minicurso</button>
+                    <button onclick="filterActivitiesByType('TRABALHO')">Trabalho</button>
+                    <button onclick="filterActivitiesByType('ALL')" id="teste">Mostrar Todas</button>
+                </div>
+            </div>
+
+            <div class="m-container-section">
+                <p class="m-container-section-p">Data</p>
+
+                <div class="filters-buttons">
+                    <button onclick="filterActivitiesByDate('22/10/2024')">22/10/2024</button>
+                    <button onclick="filterActivitiesByDate('23/10/2024')">23/10/2024</button>
+                    <button onclick="filterActivitiesByDate('24/10/2024')">24/10/2024</button>
+                    <button onclick="filterActivitiesByDate('ALL')">Mostrar Todas</button>
+                </div>
+            </div>
         </div>
         
         <div id="map"></div>
+
+        <p class="m-p-error">Encontrou algum erro/bug? <a href="/">Reporte aqui.</a></p>
     </main>
 
     <footer>
-        <div class="f-div"></div>
+        <div class="f-div">
             <img src="assets/images/pesquisa, pós-graduação e inovação do ifba irecê 1.png" alt="CPPGI Logo" class="f-img">
 
             <div class="f-nav">

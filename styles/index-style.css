@@ -60,13 +60,22 @@ header {
 
 .h-button {
     background-color: #F4C31F;
-    color: inherit;
     text-decoration: none;
     border-style: none;
     padding: 8px;
     border-radius: 5px;
     width: 90px;
     font-weight: 700;
+    transition: 0.3s;
+}
+
+.h-button:hover {
+    transition: 0.3s;
+    background-color: #d5aa1a;
+}
+
+.h-button a {
+    color: white;
 }
 
 main {

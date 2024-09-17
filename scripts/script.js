@@ -9,7 +9,7 @@ async function initMap() {
 
     map = new Map(document.getElementById("map"), {
         center: { lat: -11.327677811335677, lng: -41.86379548388087 },
-        zoom: 8,
+        zoom: 14,
     });
 
     // Tenta obter a localização do usuário
@@ -66,14 +66,19 @@ function fetchNearbyActivities(lat, lon, raio) {
                     icon: icon
                 });
 
+                // Formata os palestrantes em uma lista
+                const palestrantesFormatted = activity.palestrantes.join(', ');
+
                 // Adiciona um infoWindow ao clicar no marcador
                 const infoWindow = new google.maps.InfoWindow({
                     content: `
-                        <h3>${activity.titulo}</h3>
-                        <p>${activity.descricao}</p>
-                        <p><strong>Local:</strong> ${activity.local}</p>
-                        <p><strong>Data:</strong> ${activity.data}</p>
-                        <p><strong>Horário:</strong> ${activity.horario}</p>
+                        <h3 style="color: black; margin-bottom: 10px;">${activity.titulo}</h3>
+                        <p style="color: black;"><strong>Tipo:</strong> ${activity.tipoAtividade}</p>
+                        <p style="color: black;"><strong>Descrição:</strong> ${activity.descricao}</p>
+                        <p style="color: black;"><strong>Local:</strong> ${activity.local}</p>
+                        <p style="color: black;"><strong>Data:</strong> ${activity.data}</p>
+                        <p style="color: black;"><strong>Horário:</strong> ${activity.horario}</p>
+                        <p style="color: black;"><strong>Palestrantes:</strong> ${palestrantesFormatted}</p>
                     `
                 });
 
@@ -96,17 +101,17 @@ function fetchNearbyActivities(lat, lon, raio) {
 
 // Função para obter o ícone personalizado baseado no tipo de atividade
 function getActivityIcon(tipoAtividade) {
-    switch(tipoAtividade) {
+    switch (tipoAtividade) {
         case 'PALESTRA':
-            return 'http://maps.google.com/mapfiles/ms/icons/purple-dot.png';
-        case 'OFICINA':
-            return 'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png';
-        case 'MINICURSO':
             return 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png';
-        case 'TRABALHO':
+        case 'OFICINA':
             return 'http://maps.google.com/mapfiles/ms/icons/green-dot.png';
+        case 'MINICURSO':
+            return 'http://maps.google.com/mapfiles/ms/icons/purple-dot.png';
+        case 'TRABALHO':
+            return 'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png';
         default:
-            return 'http://maps.google.com/mapfiles/ms/icons/orange-dot.png';
+            return 'http://maps.google.com/mapfiles/ms/icons/red-dot.png';
     }
 }
 
