@@ -1,22 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atividades Próximas</title>
-    <style>
-        #map {
-            height: 100vh;
-            width: 100%;
-        }
-    </style>
+    <link rel="stylesheet" href="styles/activitiesMapScreen-style.css">
+    <title>Mapa de Atividades Próximas</title>
     
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBp66hS_jOXEkjD1K0_AufxlNdoMslEDYc&callback=initMap" async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBp66hS_jOXEkjD1K0_AufxlNdoMslEDYc"></script>
 </head>
 <body>
     <h1>Atividades Próximas</h1>
+
+    <div class="filters-buttons">
+        <button onclick="filterActivitiesByType('PALESTRA')">Palestra</button>
+        <button onclick="filterActivitiesByType('OFICINA')">Oficina</button>
+        <button onclick="filterActivitiesByType('MINICURSO')">Minicurso</button>
+        <button onclick="filterActivitiesByType('TRABALHO')">Trabalho</button>
+        <button onclick="filterActivitiesByType('ALL')" id="teste">Mostrar Todas</button>
+    </div>
+
+    <div class="filters-buttons">
+        <button onclick="filterActivitiesByDate('21/10/2024')">21/10/2024</button>
+        <button onclick="filterActivitiesByDate('22/10/2024')">22/10/2024</button>
+        <button onclick="filterActivitiesByDate('23/10/2024')">23/10/2024</button>
+        <button onclick="filterActivitiesByDate('24/10/2024')">24/10/2024</button>
+        <button onclick="filterActivitiesByDate('25/10/2024')">25/10/2024</button>
+        <button onclick="filterActivitiesByDate('ALL')">Mostrar Todas</button>
+    </div>
+    
     <div id="map"></div>
 
-    <script src="scripts/activiesMap.js"></script>
+    <script src="scripts/script.js"></script>
 </body>
 </html>
