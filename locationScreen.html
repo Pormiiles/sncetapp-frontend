@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lozalização</title>
+    <link rel="stylesheet" href="styles/locationScreen-style.css">
+    <title>Localização</title>
 </head>
 <body>
-    <header></header>
-        <div class="h-div"></div>
+    <header>
+        <div class="h-div">
             <!--<img src="" alt="">--> <h1 class="h-title">SNCT App</h1>
 
             <nav class="h-nav">
-                <a href="/" class="h-nav-i">Home</a>
-                <a href="/" class="h-nav-i">Programação</a>
-                <a href="/" class="h-nav-i">Localização</a>
-                <a href="/" class="h-nav-i">Sobre o evento</a>
+                <a href="index.html" class="h-nav-i">Home</a>
+                <a href="eventSchedule.html" class="h-nav-i">Programação</a>
+                <a href="locationScreen.html" class="h-nav-i">Localização</a>
+                <a href="eventAbout.html" class="h-nav-i">Sobre o evento</a>
             </nav>
 
             <button class="h-button"><a href="">Acessar</a></button>
@@ -22,27 +23,58 @@
     </header>
 
     <main>
-        <h2>Localização em tempo real</h2>
+        <h2 class="m-title">Localização em tempo real</h2>
 
-        <div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium tempore fugiat voluptas non? Sunt dolor repellendus minima ducimus aliquid voluptates, est optio laboriosam dolorem tenetur accusamus nisi tempora quo ullam.</p>                
+        <div class="m-section">
+            <p class="m-section-p">
+                1. Permitir Acesso à Localização
+
+                Para que o aplicativo possa exibir as atividades mais próximas de você no mapa, é necessário que o usuário permita o acesso à sua localização. Siga os passos abaixo para garantir que o sistema funcione corretamente:
+                
+                <ul class="m-section-ul">
+                    <li>Ao acessar a página de localização pela primeira vez, o navegador solicitará permissão para acessar sua localização.</li>
+                    <li>Clique em "Permitir" na janela que aparecer.</li>
+                    <li>Certifique-se de que as permissões de localização do seu dispositivo estão habilitadas para o navegador (Google Chrome, Safari, Firefox, etc.).</li>
+                </ul>
+            </p>                
         </div>
 
-        <div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut inventore ea aperiam, facilis id ducimus odit quos unde delectus natus sint praesentium, suscipit architecto assumenda hic recusandae vero, sapiente quo.</p>
+        <div class="m-section">
+            <p class="m-section-p">
+                2. Como o Mapa Funciona
+
+                <ul class="m-section-ul">
+                    <li>Assim que a permissão de localização for concedida, o mapa carregará automaticamente sua posição e exibirá as atividades próximas a você, destacando as salas de exposição, oficinas e palestras que estão acontecendo.</li>
+                    <li>Os ícones no mapa indicarão as diferentes atividades, permitindo que você clique sobre eles para obter mais informações como nome da atividade, horário e descrição.</li>
+                </ul>
+            </p>
         </div>
         
-        <div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, quam odio minima cum maiores possimus nam temporibus cumque ea dolorem animi a in laboriosam veritatis perspiciatis iste nulla quidem accusamus!</p>
+        <div class="m-section">
+            <p class="m-section-p">
+                3. Problemas com o Carregamento do Mapa
+
+                Se o mapa não carregar corretamente, pode haver diversos motivos para isso:
+
+                <ul class="m-section-ul">
+                    <li>
+                        Conexão de Internet Instável: Verifique se sua conexão à internet está ativa.
+                        Permissões de Localização: Certifique-se de que a permissão para acessar a localização foi concedida corretamente.
+                    </li>
+                    <li>Compatibilidade do Navegador: Tente acessar o aplicativo em outro navegador para verificar se o problema persiste.</li>
+                </ul>
+            </p>
         </div>
 
-        <button>Acesse o mapa</button>
+        <div class="m-button-div">
+            <button class="m-button"><a href="activitiesMapScreen.html">Acesse o mapa</a></button>
+        </div>
 
-        <p>Encontrou algum erro/bug? <a href="">Reporte aqui</a></p>
+        <p class="m-p-error">Encontrou algum erro/bug? <a href="">Reporte aqui.</a></p>
     </main>
 
     <footer>
-        <div class="f-div"></div>
+        <div class="f-div">
             <img src="assets/images/pesquisa, pós-graduação e inovação do ifba irecê 1.png" alt="CPPGI Logo" class="f-img">
 
             <div class="f-nav">
