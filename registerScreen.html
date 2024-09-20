@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/index-style.css">
-    <title>SNCT App: Bem-vindo(a)</title>
+    <link rel="stylesheet" href="styles/registerScreen-style.css">
+    <title>Criar conta</title>
 </head>
 <body>
     <header>
@@ -23,25 +23,40 @@
     </header>
 
     <main>
-        <h2 class="m-title">Bem-vindo(a) ao App da SNCT do IFBA Irecê</h2>
-
         <div class="m-container">
-            <div class="m-container-i">
-                <div class="m-container-i-div"><a href="eventSchedule.html" target="_blank"><img src="assets/icons/Schedule.png" alt="Calendário do evento"></a></div>
+            <h1>Cadastre uma conta</h1>
 
-                <p class="m-container-i-p">Acesse a programação oficial e completa do evento!</p>
-            </div>
+            <form action="" class="m-container-form">
+                <div class="m-container-form-input">
+                    <label for="iName">Nome completo</label>
+                    <input type="text" id="iName" name="name">
+                </div>
 
-            <div class="m-container-i">
-                <div class="m-container-i-div"><a href="locationScreen.html" target="_blank"><img src="assets/icons/Place Marker.png" alt="Atividades próximas"></a></div>
+                <div class="m-container-form-input">
+                    <label for="iUsername">Username</label>
+                    <input type="text" id="iUsername" name="username">
+                </div>
 
-                <p class="m-container-i-p">Obtenha sua localização em tempo real e veja atividades da SNCT próximas de você!</p>
-            </div>
+                <div class="m-container-form-input">
+                    <label for="iEmail">Email</label>
+                    <input type="text" id="iEmail" name="email">
+                </div>
 
-            <div class="m-container-i">
-                <div class="m-container-i-div"><a href="eventAbout.html" target="_blank"><img src="assets/icons/About.png" alt="Sobre o evento"></a></div>
+                <div class="m-container-form-input">
+                    <label for="iBirhDate">Data de nascimento</label>
+                    <input type="text" id="iBirthDate" name="birthdate">
+                </div>
 
-                <p class="m-container-i-p">Veja mais informações sobre a SNCT 2024 do IFBA Irecê!</p>
+                <div class="m-container-form-input">
+                    <label for="iPassword">Senha</label>
+                    <input type="text" id="iPassword" name="password">
+                </div>
+            </form>
+
+            <div class="m-container-form-footer">
+                <button>Cadastrar</button>
+
+                <p>Já possui conta? <a href="loginScreen.html">Faça login.</a></p>
             </div>
         </div>
     </main>

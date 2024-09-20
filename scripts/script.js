@@ -39,10 +39,9 @@ async function initMap() {
                 handleLocationError(true, map.getCenter());
             }
         );
-    } else {
+    } else
         // Navegador não suporta geolocalização
         handleLocationError(false, map.getCenter());
-    }
 }
 
 initMap();
@@ -101,7 +100,7 @@ function fetchNearbyActivities(lat, lon, raio) {
 
 // Função para obter o ícone personalizado baseado no tipo de atividade
 function getActivityIcon(tipoAtividade) {
-    switch (tipoAtividade) {
+    switch(tipoAtividade) {
         case 'PALESTRA':
             return 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png';
         case 'OFICINA':
@@ -135,9 +134,8 @@ function applyFilters() {
 
         if(matchesType && matchesDate) {
             marker.setMap(map);  // Mostra o marcador
-        } else {
+        } else
             marker.setMap(null);  // Remove o marcador
-        }
     });
 }
 
