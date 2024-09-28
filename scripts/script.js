@@ -48,7 +48,7 @@ initMap();
 
 // Função para buscar atividades próximas
 function fetchNearbyActivities(lat, lon, raio) {
-    fetch(`http://localhost:8080/activities/nearby?lat=${lat}&lon=${lon}&raio=${raio}`)
+    fetch(`http://ec2-3-137-214-115.us-east-2.compute.amazonaws.com:8080/activities/nearby?lat=${lat}&lon=${lon}&raio=${raio}`)
         .then(response => response.json())
         .then(activities => {
             activities.forEach(activity => {
