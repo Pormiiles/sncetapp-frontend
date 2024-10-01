@@ -19,7 +19,7 @@ header {
 
 .h-div {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     height: 120px;
     width: 1000px;
@@ -33,7 +33,6 @@ header {
 .h-nav {
     display: flex;
     align-items: center;
-    margin: auto;
     gap: 32px;
 }
 
@@ -136,6 +135,50 @@ main {
     border-radius: 5px;
 }
 
+.m-container-org {
+    width: 800px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.m-container-org-2 {
+    width: 800px;
+    margin: auto;
+}
+
+.m-container-org-2-imgs {
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 20px; 
+    margin: 32px 0px;
+}
+
+/* Cada imagem terá um tamanho adequado para caber 3 por linha */
+.m-container-org-2-imgs img {
+    flex: 1 1 calc(33.33% - 40px); 
+    max-width: calc(33.33% - 40px); 
+    margin: 10px; 
+}
+
+.m-container-org-1 p, .m-container-org-2 p {
+    text-align: center;
+}
+
+.m-container-org-1-imgs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    margin: 32px 0px;
+}
+
+.m-container-org-1-imgs img {
+    width: 60%;
+}
+
 footer {
     background-color: #024108;
 }
@@ -186,4 +229,11 @@ footer {
     text-align: center;
     margin-top: 10px;
     color: #F4C31F;
+    transition: 0.3s;
+}
+
+.f-nav-link:hover {
+    text-decoration: underline;
+    color: white;
+    transition: 0.3s;
 }

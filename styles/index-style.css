@@ -19,7 +19,7 @@ header {
 
 .h-div {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     height: 120px;
     width: 1000px;
@@ -33,7 +33,6 @@ header {
 .h-nav {
     display: flex;
     align-items: center;
-    margin: auto;
     gap: 32px;
 }
 
@@ -87,9 +86,13 @@ main {
     text-align: center;
 }
 
+.m-main-p {
+    margin-top: 10px;
+}
+
 .m-container {
     width: 800px;
-    margin: 50px auto;
+    margin: 100px auto;
 }
 
 .m-container-i {
@@ -164,4 +167,11 @@ footer {
     text-align: center;
     margin-top: 10px;
     color: #F4C31F;
+    transition: 0.3s;
+}
+
+.f-nav-link:hover {
+    text-decoration: underline;
+    color: white;
+    transition: 0.3s;
 }
