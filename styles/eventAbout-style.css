@@ -169,6 +169,17 @@ footer {
 .f-nav-social img {
     width: 30px;
     height: 30px;
+    transition: transform 0.5s, filter 0.5s;
+}
+
+.f-nav-social a:hover img#f-nav-social-instagram {
+    transform: scale(1.1);
+    content: url(../assets/icons/Instagram-yellow.png); 
+}
+
+.f-nav-social a:hover img#f-nav-social-facebook {
+    transform: scale(1.1);
+    content: url(../assets/icons/Facebook-yellow.png); 
 }
 
 .f-nav-link {

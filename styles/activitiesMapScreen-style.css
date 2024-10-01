@@ -58,26 +58,6 @@ header {
     width: 100%;
 }
 
-.h-button {
-    background-color: #F4C31F;
-    text-decoration: none;
-    border-style: none;
-    padding: 8px;
-    border-radius: 5px;
-    width: 90px;
-    font-weight: 700;
-    transition: 0.3s;
-}
-
-.h-button:hover {
-    transition: 0.3s;
-    background-color: #d5aa1a;
-}
-
-.h-button a {
-    color: white;
-}
-
 #map {
     height: 500px;
     width: 100%;
@@ -149,6 +129,13 @@ main {
 .m-p-error a {
     text-decoration: none;
     color: #F4C31F;
+    transition: 0.3s;
+}
+
+.m-p-error a:hover {
+    text-decoration: underline;
+    color: #ffffff;
+    transition: 0.3s;
 }
 
 footer {
@@ -184,6 +171,17 @@ footer {
 .f-nav-social img {
     width: 30px;
     height: 30px;
+    transition: transform 0.5s, filter 0.5s;
+}
+
+.f-nav-social a:hover img#f-nav-social-instagram {
+    transform: scale(1.1);
+    content: url(../assets/icons/Instagram-yellow.png); 
+}
+
+.f-nav-social a:hover img#f-nav-social-facebook {
+    transform: scale(1.1);
+    content: url(../assets/icons/Facebook-yellow.png); 
 }
 
 .f-nav-link {
