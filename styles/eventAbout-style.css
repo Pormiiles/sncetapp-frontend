@@ -98,7 +98,7 @@ main {
     display: flex;
     flex-direction: row;
     font-family: "Lalezar", system-ui;
-    color: white; /* Muda a cor do texto para branco */
+    color: white; 
     text-align: center;
 }
   
@@ -120,20 +120,20 @@ main {
 .m-container-gallery-p {
     margin: 20px 0;
     text-align: center;
-    color: white; /* Muda a cor do texto para branco */
+    color: white; 
 }
 
 .m-container-gallery-img {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Cria 2 colunas */
-    gap: 20px; /* Espaçamento entre as divs */
-    justify-items: center; /* Centraliza as divs dentro do container */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px; 
+    justify-items: center; 
 }
 
 .img-i {
     background-color: white;
-    width: 380px; /* Ajusta a largura das divs */
-    height: 250px; /* Ajusta a altura das divs */
+    width: 380px; 
+    height: 250px; 
     border-radius: 5px;
     overflow: hidden;
     display: flex;
@@ -142,9 +142,9 @@ main {
 }
 
 .img-i img {
-    width: 100%; /* Garante que a largura da imagem seja a mesma da div */
-    height: 100%; /* Garante que a altura da imagem seja a mesma da div */
-    object-fit: cover; /* Mantém a proporção das imagens e as ajusta ao espaço disponível */
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
 }
 
 .m-container-org {
@@ -277,20 +277,20 @@ footer {
 
     @media (max-width: 768px) {
         .m-container-gallery-img {
-            grid-template-columns: 1fr; /* Ajusta para 1 coluna */
-            gap: 15px; /* Reduz o espaçamento entre as imagens */
+            grid-template-columns: 1fr; 
+            gap: 15px;
         }
     
         .img-i {
-            width: 90%; /* Reduz a largura das divs em telas menores */
-            height: auto; /* Ajusta a altura para manter a proporção */
+            width: 90%; 
+            height: auto; 
         }
     }
     
     .img-i {
         background-color: white;
-        width: 400px; /* Ajusta a largura das divs */
-        height: 300px; /* Ajusta a altura das divs */
+        width: 400px; 
+        height: 300px; 
         border-radius: 5px;
         overflow: hidden;
         display: flex;
@@ -299,9 +299,9 @@ footer {
     }
     
     .img-i img {
-        width: 100%; /* Garante que a largura da imagem seja a mesma da div */
-        height: 100%; /* Garante que a altura da imagem seja a mesma da div */
-        object-fit: cover; /* Mantém a proporção das imagens e as ajusta ao espaço disponível */
+        width: 100%; 
+        height: 100%; 
+        object-fit: cover; 
     }
 
     .m-container-org {
@@ -316,7 +316,6 @@ footer {
         display: flex;
     }
 
-    /* Ajustes para rodapé */
     .f-div {
         width: 100%;
         padding: 0px 10px;

@@ -106,7 +106,12 @@ main {
     gap: 30px;
 }
 
-.filters-buttons button {
+.filters-buttons button:hover {
+    transition: 0.3s;
+    background-color: #d5aa1a;
+}
+
+.filter-button {
     padding: 10px;
     background-color: #F4C31F;
     font-weight: bold;
@@ -118,8 +123,10 @@ main {
     transition: 0.3s;
 }
 
-.filters-buttons button:hover {
-    transition: 0.3s;
+.filter-button:hover,
+.filter-button:focus,
+.filter-button:active {
+    cursor: pointer;
     background-color: #d5aa1a;
 }
 
