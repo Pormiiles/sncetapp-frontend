@@ -91,16 +91,18 @@ main {
 }
 
 .m-container-gallery {
-    margin: 70px 0px;
+    margin: 70px 0;
 }
 
 .m-container-gallery-h2 {
     display: flex;
     flex-direction: row;
     font-family: "Lalezar", system-ui;
+    color: white; /* Muda a cor do texto para branco */
+    text-align: center;
 }
   
-.m-container-gallery-h2:before, .m-container-gallery-h2:after{
+.m-container-gallery-h2:before, .m-container-gallery-h2:after {
     content: "";
     flex: 1 1;
     border-bottom: 1px solid;
@@ -108,31 +110,41 @@ main {
 }
 
 .m-container-gallery-h2:before {
-    margin-right: 10px
+    margin-right: 10px;
 }
 
 .m-container-gallery-h2:after {
-    margin-left: 10px
+    margin-left: 10px;
 }
 
 .m-container-gallery-p {
-    margin: 20px 0px;
+    margin: 20px 0;
+    text-align: center;
+    color: white; /* Muda a cor do texto para branco */
 }
 
 .m-container-gallery-img {
-    margin: 30px 0px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Cria 2 colunas */
+    gap: 20px; /* Espaçamento entre as divs */
+    justify-items: center; /* Centraliza as divs dentro do container */
 }
 
 .img-i {
     background-color: white;
-    width: 350px;
-    height: 210px;
+    width: 380px; /* Ajusta a largura das divs */
+    height: 250px; /* Ajusta a altura das divs */
     border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-i img {
+    width: 100%; /* Garante que a largura da imagem seja a mesma da div */
+    height: 100%; /* Garante que a altura da imagem seja a mesma da div */
+    object-fit: cover; /* Mantém a proporção das imagens e as ajusta ao espaço disponível */
 }
 
 .m-container-org {
@@ -156,7 +168,6 @@ main {
     margin: 32px 0px;
 }
 
-/* Cada imagem terá um tamanho adequado para caber 3 por linha */
 .m-container-org-2-imgs img {
     flex: 1 1 calc(33.33% - 40px); 
     max-width: calc(33.33% - 40px); 
@@ -264,8 +275,33 @@ footer {
         margin: 20px auto;
     }
 
-    .m-container-gallery {
-        width: 100%;
+    @media (max-width: 768px) {
+        .m-container-gallery-img {
+            grid-template-columns: 1fr; /* Ajusta para 1 coluna */
+            gap: 15px; /* Reduz o espaçamento entre as imagens */
+        }
+    
+        .img-i {
+            width: 90%; /* Reduz a largura das divs em telas menores */
+            height: auto; /* Ajusta a altura para manter a proporção */
+        }
+    }
+    
+    .img-i {
+        background-color: white;
+        width: 400px; /* Ajusta a largura das divs */
+        height: 300px; /* Ajusta a altura das divs */
+        border-radius: 5px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .img-i img {
+        width: 100%; /* Garante que a largura da imagem seja a mesma da div */
+        height: 100%; /* Garante que a altura da imagem seja a mesma da div */
+        object-fit: cover; /* Mantém a proporção das imagens e as ajusta ao espaço disponível */
     }
 
     .m-container-org {
