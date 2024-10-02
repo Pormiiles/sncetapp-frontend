@@ -100,6 +100,7 @@ main {
     display: flex;
     align-items: center;
     gap: 32px;
+    flex-wrap: wrap; 
 }
 
 .m-container-i-div {
@@ -117,6 +118,7 @@ main {
     height: 90px;
 }
 
+/* Estilo do rodapé */
 footer {
     background-color: #024108;
 }
@@ -174,4 +176,59 @@ footer {
     text-decoration: underline;
     color: white;
     transition: 0.3s;
+}
+
+/* Media Query para telas menores (largura máxima de 768px) */
+@media (max-width: 768px) {
+    .h-div {
+        width: 100%;
+        padding: 40px 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        height: auto;
+    }
+
+    .h-nav {
+        display: flex;
+        gap: 16px;
+    }
+
+    .h-button {
+        width: auto;
+        padding: 12px 16px;
+    }
+
+    main, .m-container {
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .m-container-i {
+        flex-direction: column;
+    }
+
+    .m-container-i-div {
+        width: 150px;
+        height: 150px;
+        max-width: 200px;
+        max-height: 200px;
+        margin: 10px auto;
+    }
+
+    .f-div {
+        width: 100%;
+        padding: 0px 10px;
+        display: flex;
+    }
+
+    .f-div img {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .f-nav {
+        height: auto;
+        align-items: center;
+    }
 }
