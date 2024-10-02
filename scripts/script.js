@@ -48,7 +48,7 @@ initMap();
 
 // Função para buscar atividades próximas
 function fetchNearbyActivities(lat, lon, raio) {
-    fetch(`http://3.135.209.185:8080/activities/nearby?lat=${lat}&lon=${lon}&raio=${raio}`)
+    fetch(`https://sncetapp-backend-e5ebfd28a45d.herokuapp.com/activities/nearby?lat=${lat}&lon=${lon}&raio=${raio}`)
         .then(response => response.json())
         .then(activities => {
             activities.forEach(activity => {
