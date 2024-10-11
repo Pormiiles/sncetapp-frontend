@@ -33,7 +33,7 @@ async function initMap() {
                 map.setCenter(userLocation);
 
                 // Busca atividades próximas usando a API
-                fetchNearbyActivities(userLocation.lat, userLocation.lng, 5);  // Raio de 5km
+                fetchNearbyActivities(userLocation.lat, userLocation.lng, 150);  // Raio de 150km
             },
             () => {
                 handleLocationError(true, map.getCenter());
