@@ -130,7 +130,7 @@ function filterActivitiesByDate(date) {
 function applyFilters() {
     markers.forEach(({ marker, tipoAtividade, dataAtividade }) => {
         const matchesType = currentTypeFilter === 'ALL' || tipoAtividade === currentTypeFilter;
-        const matchesDate = currentDateFilter === 'ALL' || dataAtividade === currentDateFilter;
+        const matchesDate = currentDateFilter === 'ALL' || dataAtividade.includes(currentDateFilter);
 
         if(matchesType && matchesDate) {
             marker.setMap(map);  // Mostra o marcador
