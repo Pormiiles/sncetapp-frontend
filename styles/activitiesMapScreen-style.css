@@ -238,7 +238,8 @@ footer {
     }
 
     #map {
-        height: 300px; 
+        height: 550px; 
+        width: 100%;
     }
 
     .m-container {
