@@ -65,8 +65,8 @@ function fetchNearbyActivities(lat, lon, raio) {
                     icon: icon
                 });
 
-                // Formata os palestrantes em uma lista
-                const palestrantesFormatted = activity.palestrantes.join(', ');
+                // Formata os ministrantes em uma lista
+                const ministrantesFormatted = activity.ministrantes.join(', ');
 
                 // Adiciona um infoWindow ao clicar no marcador
                 const infoWindow = new google.maps.InfoWindow({
@@ -77,7 +77,7 @@ function fetchNearbyActivities(lat, lon, raio) {
                         <p style="color: black;"><strong>Local:</strong> ${activity.local}</p>
                         <p style="color: black;"><strong>Data:</strong> ${activity.data}</p>
                         <p style="color: black;"><strong>Horário:</strong> ${activity.horario}</p>
-                        <p style="color: black;"><strong>Palestrantes:</strong> ${palestrantesFormatted}</p>
+                        <p style="color: black;"><strong>Ministrantes:</strong> ${ministrantesFormatted}</p>
                     `
                 });
 

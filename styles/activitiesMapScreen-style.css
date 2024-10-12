@@ -130,6 +130,10 @@ main {
     background-color: #d5aa1a;
 }
 
+#cleanBtn {
+    border: 3px solid white;
+} 
+
 .m-p-error {
     width: 100%;
     margin: 40px 0px;
@@ -243,7 +247,8 @@ footer {
 
     .filters-buttons { 
         display: flex;
-        gap: 10px;
+        flex-wrap: wrap;
+        gap: 20px;
     }
 
     .filters-buttons button {
