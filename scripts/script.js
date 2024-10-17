@@ -127,7 +127,8 @@ function getActivityIcon(tipoAtividade) {
     // Retorna um novo PinElement com a cor especificada
     return new google.maps.marker.PinElement({
         background: color,
-        borderColor: '#FFFFFF'
+        borderColor: '#FFFFFF',
+        glyphColor: "white"
     });
 }
 
