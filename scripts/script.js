@@ -6,14 +6,16 @@ let currentDateFilter = 'ALL';  // Armazena o filtro atual por data
 
 async function initMap() {
     const { Map } = await google.maps.importLibrary("maps");
+    const { AdvancedMarkerElement, PinElement } = await google.maps.importLibrary("marker");
 
-    map = new Map(document.getElementById("map"), {
+    map = new google.maps.Map(document.getElementById("map"), {
         center: { lat: -11.327677811335677, lng: -41.86379548388087 },
         zoom: 14,
+        mapId: "d28854f19dc87470"
     });
 
     // Tenta obter a localização do usuário
-    if(navigator.geolocation) {
+    if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
             (position) => {
                 const userLocation = {
@@ -21,12 +23,18 @@ async function initMap() {
                     lng: position.coords.longitude
                 };
 
-                // Coloca um marcador na localização do usuário
-                userMarker = new google.maps.Marker({
+                // Criar um novo PinElement para o AdvancedMarkerElement
+                const pin = new PinElement({
+                    background: '#FF0000',  // Cor vermelha para o marcador do usuário
+                    borderColor: '#FFFFFF', // Cor da borda
+                });
+
+                // Coloca um marcador na localização do usuário com PinElement
+                userMarker = new google.maps.marker.AdvancedMarkerElement({
                     position: userLocation,
                     map: map,
                     title: "Você está aqui!",
-                    icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png'
+                    content: pin.element  // Passa o PinElement como conteúdo do marcador
                 });
 
                 // Centraliza o mapa na localização do usuário
@@ -39,12 +47,11 @@ async function initMap() {
                 handleLocationError(true, map.getCenter());
             }
         );
-    } else
+    } else {
         // Navegador não suporta geolocalização
         handleLocationError(false, map.getCenter());
+    }
 }
-
-initMap();
 
 // Função para buscar atividades próximas
 function fetchNearbyActivities(lat, lon, raio) {
@@ -54,15 +61,15 @@ function fetchNearbyActivities(lat, lon, raio) {
             activities.forEach(activity => {
                 const activityPosition = { lat: activity.lat, lng: activity.lon };
 
-                // Escolhe o ícone baseado no tipo da atividade
-                const icon = getActivityIcon(activity.tipoAtividade);
+                // Escolhe o PinElement baseado no tipo da atividade
+                const pin = getActivityIcon(activity.tipoAtividade);
 
                 // Coloca um marcador no mapa para cada atividade
-                const marker = new google.maps.Marker({
+                const marker = new google.maps.marker.AdvancedMarkerElement({
                     position: activityPosition,
                     map: map,
                     title: activity.titulo,
-                    icon: icon
+                    content: pin.element  // Usa o PinElement como ícone
                 });
 
                 // Formata os ministrantes em uma lista
@@ -100,18 +107,28 @@ function fetchNearbyActivities(lat, lon, raio) {
 
 // Função para obter o ícone personalizado baseado no tipo de atividade
 function getActivityIcon(tipoAtividade) {
+    let color = '#FF0000';  // Cor padrão (vermelha)
+
     switch(tipoAtividade) {
         case 'PALESTRA':
-            return 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png';
+            color = '#0000FF';  // Azul
+            break;
         case 'OFICINA':
-            return 'http://maps.google.com/mapfiles/ms/icons/green-dot.png';
+            color = '#008000';  // Verde
+            break;
         case 'MINICURSO':
-            return 'http://maps.google.com/mapfiles/ms/icons/purple-dot.png';
+            color = '#800080';  // Roxo
+            break;
         case 'TRABALHO':
-            return 'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png';
-        default:
-            return 'http://maps.google.com/mapfiles/ms/icons/red-dot.png';
+            color = '#FFFF00';  // Amarelo
+            break;
     }
+
+    // Retorna um novo PinElement com a cor especificada
+    return new google.maps.marker.PinElement({
+        background: color,
+        borderColor: '#FFFFFF'
+    });
 }
 
 // Função de filtragem de atividades por tipo
@@ -132,10 +149,11 @@ function applyFilters() {
         const matchesType = currentTypeFilter === 'ALL' || tipoAtividade === currentTypeFilter;
         const matchesDate = currentDateFilter === 'ALL' || dataAtividade.includes(currentDateFilter);
 
-        if(matchesType && matchesDate) {
+        if (matchesType && matchesDate) {
             marker.setMap(map);  // Mostra o marcador
-        } else
+        } else {
             marker.setMap(null);  // Remove o marcador
+        }
     });
 }
 
@@ -149,3 +167,6 @@ function handleLocationError(browserHasGeolocation, pos) {
     });
     infoWindow.open(map);
 }
+
+// Inicializa o mapa
+initMap();
